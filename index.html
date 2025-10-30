@@ -87,6 +87,19 @@
   <footer>
     <p>© 2025 TradeSmart</p>
   </footer>
+<script>
+  // Smooth scroll for navigation links
+  const links = document.querySelectorAll('nav .nav-links a');
+
+  for (const link of links) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    });
+  }
+</script>
 
 </body>
 </html>
