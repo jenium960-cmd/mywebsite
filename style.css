@@ -162,3 +162,17 @@ footer {
 .toggle-btn:hover {
   background-color: #155ab6;
 }
+.info-details {
+  display: none;
+  margin-top: 15px;
+  color: #444;
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.info-details ul {
+  list-style-type: square;
+  padding-left: 20px;
+}
