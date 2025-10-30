@@ -154,6 +154,42 @@
     });
   });
 </script>
+<script>
+  // Smooth scroll for navigation links
+  const links = document.querySelectorAll('nav .nav-links a');
+
+  for (const link of links) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    });
+  }
+
+  // Toggle "Learn More" for strategy cards
+  const toggleButtons = document.querySelectorAll('.toggle-btn');
+
+  toggleButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const card = btn.parentElement;
+      const fullText = card.querySelector('.full-text');
+      const infoDetails = card.querySelector('.info-details');
+      
+      // Toggle "Learn More" text and show/hide information
+      if (infoDetails.style.display === 'block') {
+        infoDetails.style.display = 'none';
+        btn.textContent = 'Learn More';
+      } else {
+        infoDetails.style.display = 'block';
+        btn.textContent = 'Show Less';
+      }
+      
+      // Optionally toggle full text too if required
+      fullText.style.display = fullText.style.display === 'block' ? 'none' : 'block';
+    });
+  });
+</script>
 
 </body>
 </html>
